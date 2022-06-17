@@ -7,4 +7,4 @@
 
 ### [osa 1](https://github.com/aitoAarni/fullstackopen/tree/main/osa%201)
 
-### [osa 2}(https://github.com/aitoAarni/fullstackopen/tree/main/osa%202)
+### [osa 2](https://github.com/aitoAarni/fullstackopen/tree/main/osa%202)
