@@ -101,20 +101,26 @@ const App = () => {
           setPersons(temp)
           setFlash("edited number for " + newName)
         })
-        .catch(() => {
+        .catch((error) => {
           setFlash(`information of ${newName} has already been removed from the server`)
         })
       }
     }
 
-    else if (!numbers.includes(newNumber) && newNumber.length > 2) {
-      service.create({name: newName, number: newNumber, id: persons[persons.length-1].id + 1}).then(response => {
+    else if (!numbers.includes(newNumber))   {
+      console.log('is nan', isNaN(newNumber), newNumber)
+      service.create({name: newName, number: newNumber, id: persons[persons.length-1].id + 1})
+      .then(response => {
         setPersons(persons.concat(response.data))
         setFlash(`new contact ${newName} addedi `)
+      
+      })
+      .catch(error => {
+        setFlash(error.response.data)
       })
     }
    else {
-    setFlash('number already exists or is too short')
+    setFlash('number already exists ')
    }
     setNewName("")
     setNewNumber("")
